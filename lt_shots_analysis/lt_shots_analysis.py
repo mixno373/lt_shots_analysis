@@ -21,28 +21,52 @@ firerate = 300
 firemode = "ОД"
 # firemode = "АВ"
 
-tth_data = [
-    {
-        "shock": 800,
-        "invulnerability": 500,
-        "title": "Без СИБЗ"
-    },
-    {
-        "shock": 800,
-        "invulnerability": 700,
-        "title": "СИБЗ - 1 класс"
-    },
-    {
-        "shock": 800,
-        "invulnerability": 900,
-        "title": "СИБЗ - 2 класс"
-    },
-    {
-        "shock": 800,
-        "invulnerability": 1100,
-        "title": "СИБЗ - 3 класс"
-    },
-]
+tth_alldata = {
+    "Здание": [
+        {
+            "shock": 300,
+            "invulnerability": 200,
+            "title": "Без СИБЗ"
+        },
+        {
+            "shock": 300,
+            "invulnerability": 300,
+            "title": "СИБЗ - 1 класс"
+        },
+        {
+            "shock": 300,
+            "invulnerability": 400,
+            "title": "СИБЗ - 2 класс"
+        },
+        {
+            "shock": 300,
+            "invulnerability": 500,
+            "title": "СИБЗ - 3 класс"
+        }
+    ],
+    "Лес": [
+        {
+            "shock": 800,
+            "invulnerability": 500,
+            "title": "Без СИБЗ"
+        },
+        {
+            "shock": 800,
+            "invulnerability": 700,
+            "title": "СИБЗ - 1 класс"
+        },
+        {
+            "shock": 800,
+            "invulnerability": 900,
+            "title": "СИБЗ - 2 класс"
+        },
+        {
+            "shock": 800,
+            "invulnerability": 1100,
+            "title": "СИБЗ - 3 класс"
+        }
+    ]
+}
 
 
 for firerate in [
@@ -62,6 +86,8 @@ for firerate in [
     500
 ]:
     for polygon in ["Здание", "Лес"]:
+        tth_data = tth_alldata[polygon]
+        
         for firemode in ["ОД", "АВ"]:
             
             plot_title = f'{polygon} - {firerate} выстр/с. {firemode}'
