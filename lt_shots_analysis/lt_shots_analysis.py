@@ -98,9 +98,9 @@ for firerate in [
             shot_y_shift = 0.125
             toptext_y_shift = 0.15
             undertext_y_shift = 0.1
-            x_length = 3 * 1000 # Ширина графика в мс
+            x_length = 1.5 * 1000 # Ширина графика в мс
 
-            plt.axis([-200, x_length, 0.2, 2.2])
+            plt.axis([-10, x_length, 0.2, 2.2])
             plt.box(on=None)
 
 
